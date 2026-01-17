@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Review - Noor Alam</title>
+    <style>
+        /* ১. সিএসএস ভেরিয়েবল (আধুনিক নিয়ম) */
+        :root {
+            --primary-color: #3498db;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* ২. ফ্লেক্সবক্সের ব্যবহার */
+        header {
+            display: flex; /* ফ্লেক্সবক্স চালু */
+            justify-content: space-between; /* দুই পাশে সরিয়ে দেওয়া */
+            align-items: center; /* মাঝ বরাবর রাখা */
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .work-container {
+            display: flex;
+            flex-wrap: wrap; /* ছোট স্ক্রিনে নিচে চলে যাবে */
+            gap: 20px; /* কার্ডগুলোর মাঝখানের গ্যাপ */
+            margin-top: 30px;
+        }
+
+        /* ৩. কার্ড ডিজাইন */
+        .card {
+            background-color: var(--card-bg);
+            flex: 1 1 300px; /* কার্ডের সাইজ নমনীয় হবে */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        h2 { margin-top: 0; color: #333; }
+        
+        .status {
+            font-weight: bold;
+            color: green;
+        }
+
+        /* ৪. রেসপন্সিভ ডিজাইন (মোবাইল চেক) */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column; /* মোবাইলে উপরে-নিচে হবে */
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Semantic HTML ব্যবহার -->
+    <header>
+        <h1>Shipyard Log</h1>
+        <div>Date: Jan 15, 2026</div>
+    </header>
+
+    <main>
+        <div class="work-container">
+            <!-- কার্ড ১ -->
+            <section class="card">
+                <h2>Morning Shift</h2>
+                <p>Task: Pipe Alignment & Welding Check</p>
+                <p>Status: <span class="status">Completed</span></p>
+            </section>
+
+            <!-- কার্ড ২ -->
+            <section class="card">
+                <h2>Evening Shift</h2>
+                <p>Task: Documentation & Tool Safety</p>
+                <p>Status: <span class="status">In Progress</span></p>
+            </section>
+
+            <!-- কার্ড ৩ -->
+            <section class="card">
+                <h2>Programming Study</h2>
+                <p>Task: HTML & CSS Review</p>
+                <p>Status: <span class="status">Learning...</span></p>
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
