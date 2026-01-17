@@ -3,98 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML & CSS Review - Noor Alam</title>
+    <title>Tailwind CSS Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ১. সিএসএস ভেরিয়েবল (আধুনিক নিয়ম) */
-        :root {
-            --primary-color: #3498db;
-            --bg-color: #f4f7f6;
-            --card-bg: #ffffff;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* ২. ফ্লেক্সবক্সের ব্যবহার */
-        header {
-            display: flex; /* ফ্লেক্সবক্স চালু */
-            justify-content: space-between; /* দুই পাশে সরিয়ে দেওয়া */
-            align-items: center; /* মাঝ বরাবর রাখা */
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-        }
-
-        .work-container {
-            display: flex;
-            flex-wrap: wrap; /* ছোট স্ক্রিনে নিচে চলে যাবে */
-            gap: 20px; /* কার্ডগুলোর মাঝখানের গ্যাপ */
-            margin-top: 30px;
-        }
-
-        /* ৩. কার্ড ডিজাইন */
-        .card {
-            background-color: var(--card-bg);
-            flex: 1 1 300px; /* কার্ডের সাইজ নমনীয় হবে */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            border-left: 5px solid var(--primary-color);
-        }
-
-        h2 { margin-top: 0; color: #333; }
-        
-        .status {
-            font-weight: bold;
-            color: green;
-        }
-
-        /* ৪. রেসপন্সিভ ডিজাইন (মোবাইল চেক) */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column; /* মোবাইলে উপরে-নিচে হবে */
-                text-align: center;
-            }
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800">
 
-    <!-- Semantic HTML ব্যবহার -->
-    <header>
-        <h1>Shipyard Log</h1>
-        <div>Date: Jan 15, 2026</div>
-    </header>
-
-    <main>
-        <div class="work-container">
-            <!-- কার্ড ১ -->
-            <section class="card">
-                <h2>Morning Shift</h2>
-                <p>Task: Pipe Alignment & Welding Check</p>
-                <p>Status: <span class="status">Completed</span></p>
-            </section>
-
-            <!-- কার্ড ২ -->
-            <section class="card">
-                <h2>Evening Shift</h2>
-                <p>Task: Documentation & Tool Safety</p>
-                <p>Status: <span class="status">In Progress</span></p>
-            </section>
-
-            <!-- কার্ড ৩ -->
-            <section class="card">
-                <h2>Programming Study</h2>
-                <p>Task: HTML & CSS Review</p>
-                <p>Status: <span class="status">Learning...</span></p>
-            </section>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-bold text-blue-600">MyBrand</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#" class="hover:text-blue-600 px-3 py-2 transition">হোম</a>
+                        <a href="#" class="hover:text-blue-600 px-3 py-2 transition">সার্ভিস</a>
+                        <a href="#" class="hover:text-blue-600 px-3 py-2 transition">আমাদের সম্পর্কে</a>
+                        <a href="#" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">যোগাযোগ</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </nav>
+
+    <section class="relative bg-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+            <div class="lg:w-1/2 text-center lg:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+                    আপনার ব্যবসার জন্য <span class="text-blue-600">সেরা ডিজিটাল</span> সলিউশন
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    আমরা অত্যাধুনিক প্রযুক্তি ব্যবহার করে আপনার স্বপ্নকে বাস্তবে রূপ দিই। আজই আমাদের সাথে আপনার প্রজেক্ট শুরু করুন।
+                </p>
+                <div class="flex justify-center lg:justify-start space-x-4">
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-blue-700 transform hover:-translate-y-1 transition duration-300">
+                        কাজ শুরু করি
+                    </button>
+                    <button class="border-2 border-gray-300 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                        ডেমো দেখুন
+                    </button>
+                </div>
+            </div>
+            <div class="lg:w-1/2 mt-12 lg:mt-0">
+                <img src="https://illustrations.popsy.co/blue/remote-work.svg" alt="Hero Image" class="w-full h-auto">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">কেন আমাদের বেছে নেবেন?</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">দ্রুত গতি</h3>
+                    <p class="text-gray-600">আমাদের তৈরি ওয়েবসাইটগুলো সুপার ফাস্ট লোডিং স্পিড নিশ্চিত করে।</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">নিরাপত্তা</h3>
+                    <p class="text-gray-600">আপনার ডাটা এবং ওয়েবসাইটের সর্বোচ্চ নিরাপত্তা আমরা প্রদান করি।</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">রেসপনসিভ ডিজাইন</h3>
+                    <p class="text-gray-600">মোবাইল, ট্যাবলেট বা পিসি—সব ডিভাইসেই আপনার সাইট দেখাবে চমৎকার।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <span class="text-2xl font-bold text-blue-400">MyBrand</span>
+                <p class="mt-2 text-gray-400">নতুন কিছু গড়ার প্রত্যয়ে।</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8 text-gray-400">
+                <a href="#" class="hover:text-white">ফেসবুক</a>
+                <a href="#" class="hover:text-white">টুইটার</a>
+                <a href="#" class="hover:text-white">লিঙ্কডইন</a>
+            </div>
+            <p class="text-sm text-gray-500 border-t border-gray-800 pt-8">
+                &copy; 2024 MyBrand. সর্বস্বত্ব সংরক্ষিত।
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
